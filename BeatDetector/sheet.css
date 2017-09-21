@@ -1,0 +1,61 @@
+#sheetDiv{
+  display: inline-flex;
+}
+
+.measure{
+  display: flex;
+  text-align: justify;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  /*border-right: 1px solid black;*/
+}
+
+.note{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+
+.whole{
+  background-image: url("whole.svg");
+  width: 30px;
+  height: 17px;
+}
+
+.half{
+  background-image: url("half.svg");
+  width: 25px;
+  height: 70px;
+  margin-bottom: 50px;
+}
+
+.quarter{
+  background-image: url("quarter.svg");
+  width: 25px;
+  height: 70px;
+  margin-bottom: 50px;
+}
+
+.eighth{
+  background-image: url("eighth.svg");
+  width: 42px;
+  height: 70px;
+  margin-bottom: 50px;
+}
+
+.sixteenth{
+  background-image: url("sixteenth.svg");
+  width: 40px;
+  height: 76px;
+  margin-bottom: 56px;
+}
+
+.thirtysecond{
+  background-image: url("thirtysecond.svg");
+  width: 40px;
+  height: 80px;
+  margin-bottom: 60px;
+}

@@ -1,0 +1,65 @@
+#graph-wrapper{
+  display: inline-flex;
+}
+
+#scale{
+  width: 30px;
+  height: 50%;
+  font-size: 10px;
+  font: -webkit-mini-control;
+  /*border-right: 1px solid black;*/
+}
+
+#canvas-wrapper{
+  position: relative;
+  height: 50%;
+  width: 100%;
+}
+
+#signal-graph{
+  position: relative;
+  width:100%;
+  height: 100%;
+}
+
+#staff{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: -100%;
+  /*padding: 0 3em;*/
+  display: flex;
+  text-align: justify;
+  justify-content: space-around;
+}
+
+#staff:after {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 1px;
+  background: black;
+  content: "";
+  width: 100%;
+  display: block;
+}
+
+#cursor{
+  position: relative;
+  width: 3px;
+  height: 50%;
+  top: -175%;
+  border-right: 1px solid gray;
+  display: flex;
+  transition-timing-function: linear;
+}
+
+hr {
+    /*display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;*/
+}

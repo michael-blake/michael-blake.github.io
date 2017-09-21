@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,user-scalable=no">
+    <meta charset="utf-8">
+    <title>Web Audio Tool Test</title>
+
+    <link type="text/css" rel="stylesheet" href="main.css">
+    <link type="text/css" rel="stylesheet" href="sheet.css">
+
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="sheet.js"></script>
+
+  </head>
+
+  <body>
+
+    <p>
+    Short average
+    <meter id="avg-level" min="-100" max="10" value="-100"></meter>
+    <span id="avg-level-text">—</span> dB
+
+    <p>
+    Instantaneous
+    <meter id="inst-level" min="-100" max="10" value="-100"></meter>
+    <span id="inst-level-text">—</span> dB
+
+    <p>
+
+    <button id="stop-button">Stop</button>
+
+    <p>
+
+      <div id="graph-wrapper">
+        <svg id="scale" dir="rtl" width="30px" height="200px">
+          <text id="db-marker" x="10" y="50%" font-size="10px">dB</text>
+        </svg>
+        <div id="canvas-wrapper">
+          <canvas  id="signal-graph" width="1000px" height="200px"></canvas>
+          <div id="staff"></div>
+          <div id="cursor"></div>
+        </div>
+      </div>
+      <!-- <div id=control-panel>
+        <input id="gain-slider" type="range" min="-20" max="20" value="0">
+      </div> -->
+
+  </body>
