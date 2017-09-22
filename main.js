@@ -54,7 +54,7 @@ window.onload = function() {
 
   drawScale();
   // (tempo, timeSigTop, timeSigBottom, resolution, measures, beatMap, sheetDiv)
-  var testSheet = new sheet(60, 4, 4, 2, [1,2,4,8,16,32,32], staff)
+  var testSheet = new sheet(60, 4, 4, 2, [2,4,4,2,4,4], staff)
   testSheet.renderBeatMap();
   var duration = testSheet.getDuration();
 
