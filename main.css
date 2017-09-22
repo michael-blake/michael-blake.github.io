@@ -13,7 +13,7 @@
 
 #scale{
   width: 30px;
-  height: 50%;
+  height: 400px;
   font-size: 10px;
   font: -webkit-mini-control;
   /*border-right: 1px solid black;*/
@@ -21,7 +21,7 @@
 
 #canvas-wrapper{
   position: relative;
-  height: 50%;
+  height: 400px;
   width: 100%;
 }
 
