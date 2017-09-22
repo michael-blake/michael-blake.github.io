@@ -9,25 +9,24 @@
 
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="sheet.js"></script>
+    <script type="text/javascript" src="click.js"></script>
+    <script type="text/javascript" src="waveform.js"></script>
 
   </head>
 
   <body>
 
-    <p>
-    Short average
-    <meter id="avg-level" min="-100" max="10" value="-100"></meter>
-    <span id="avg-level-text">—</span> dB
+    <meter id="level" min="-100" max="10" value="-100"></meter>
 
-    <p>
-    Instantaneous
-    <meter id="inst-level" min="-100" max="10" value="-100"></meter>
-    <span id="inst-level-text">—</span> dB
-
-    <p>
-
+    <button id="start-button">Start</button>
     <button id="stop-button">Stop</button>
 
+    <select id="selector" name="difficulty">
+      <option value="default">select...</option>
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
     <p>
 
     <div id="content">
@@ -43,9 +42,6 @@
         </div>
       </div>
       <div id="counter"></div>
-      <!-- <div id=control-panel>
-        <input id="gain-slider" type="range" min="-20" max="20" value="0">
-      </div> -->
     </div>
 
   </body>

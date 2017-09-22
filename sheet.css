@@ -42,7 +42,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /*position: relative;*/
+  position: relative;
 
 }
 
@@ -85,4 +85,12 @@
   width: 40px;
   height: 80px;
   bottom: 29px;
+}
+
+.tie{
+  background-image: url("images/tie.svg");
+  width: 88px;
+  height: 8px;
+  bottom: 101px;
+  position: absolute;
 }

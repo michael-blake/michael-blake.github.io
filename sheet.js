@@ -37,35 +37,15 @@ sheet.prototype = {
     var note;
     var prevNote = null;
 
-    // for(var i = 0; i < this.beatMap.length; ++i){
-    //   var currentMeasure = this.measures[measureIndex];
-    //   var beatRes = this.reckonBeat(this.beatMap[i]);
-    //   console.log(resRemaining);
-    //   if(remainder > 0){
-    //     note = this.addNote(remainder, prevNote, false);
-    //     prevNote = note;
-    //   }
-    //   if(beatRes < resRemaining){
-    //     note = this.addNote(beatRes, prevNote, false);
-    //     resRemaining = resRemaining - beatRes;
-    //     prevNote = note;
-    //   }
-    //   else if(beatRes >= resRemaining){
-    //     note = this.addNote(beatRes, prevNote, true);
-    //     ++measureIndex;
-    //     prevNote = note;
-    //     remainder = beatRes - resRemaining;
-    //     resRemaining = this.resolution;
-    //   }
-    // }
-
     for(var i = 0; i < this.beatMap.length; ++i){
       var currentMeasure = this.measures[measureIndex];
       var beatRes = this.reckonNoteAsRes(this.beatMap[i]);
       console.log(resRemaining);
       if(remainder > 0){
-        note = this.addNote(remainder, prevNote, false);
+        note = this.addNote(remainder, prevNote, true);
         prevNote = note;
+        resRemaining = resRemaining - remainder;
+        remainder = 0;
       }
       if(beatRes < resRemaining){
         note = this.addNote(beatRes, prevNote, false);
@@ -73,7 +53,7 @@ sheet.prototype = {
         prevNote = note;
       }
       else if(beatRes >= resRemaining){
-        note = this.addNote(beatRes, prevNote, true);
+        note = this.addNote(resRemaining, prevNote, false);
         ++measureIndex;
         prevNote = note;
         remainder = beatRes - resRemaining;
@@ -95,7 +75,7 @@ sheet.prototype = {
     var beats = this.reckonResAsBeats(res);
     return this.timeSigBottom / beats;
   },
-  
+
   makeStaff: function() {
     this.noteDiv = document.getElementById('note-div');
     this.measureWidth = this.sheetDiv.clientWidth / this.measureCount;
@@ -159,13 +139,21 @@ sheet.prototype = {
     this.noteDiv.appendChild(note);
 
     if(prevNote != null){
-      // var noteBeats = this.reckonBeat(beat);
-      // var margin = (measureElem.clientWidth -20) / prevNote.value - 0.5*(note.clientWidth + prevNote.clientWidth);
       var margin = (this.measureWidth) * prevNote.beats / this.timeSigTop - 0.5 * (note.clientWidth + prevNote.clientWidth);
       note.style.marginLeft = margin;
     } else note.style.marginLeft = 25 - 0.5 * note.clientWidth;
 
+    if(fTie)
+      this.addTie();
+
     return note;
+  },
+
+  addTie: function() {
+    var tie = document.createElement('div');
+    tie.className ='tie note';
+    this.noteDiv.appendChild(tie);
+    tie.style.marginLeft = this.measureWidth - 60;
   }
 }
 
